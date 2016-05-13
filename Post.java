@@ -23,6 +23,11 @@ public class Post
        likes = 0;
        comments = new ArrayList<>();
     }
+    
+    public String getAuthor()
+    {
+        return username;
+    }
 
     /**
      * Metodo para dar un like.
