@@ -1,4 +1,5 @@
 
+import java.util.ArrayList;
 /**
  * Write a description of class MessagePost here.
  * 
@@ -8,6 +9,7 @@
 public class MessagePost extends Post
 {
     private String message;
+    private ArrayList<String> comments;
     /**
      * Constructor for objects of class MessagePost
      */
@@ -15,6 +17,7 @@ public class MessagePost extends Post
     {
         super(author);
         this.message = text;
+        comments = new ArrayList<>();
     }
     
     /**
@@ -26,5 +29,11 @@ public class MessagePost extends Post
     public void printShortSummary()
     {
         System.out.println("Esto es un post de texto creado por "+  getAuthor());
+    }
+    /**
+     * Metodo para añadir un comentario al post
+     */
+    public void addComment(String text){
+        comments.add(text);
     }
 }

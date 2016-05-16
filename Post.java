@@ -11,7 +11,6 @@ public class Post
     private String username;
     private long timestamp;
     private int likes;
-    private ArrayList<String> comments;
 
     /**
      * Constructor for objects of class MessagePost
@@ -21,7 +20,6 @@ public class Post
        this.username = author;
        this.timestamp = System.currentTimeMillis();
        likes = 0;
-       comments = new ArrayList<>();
     }
     
     public String getAuthor()
@@ -45,13 +43,6 @@ public class Post
     }
     
     /**
-     * Metodo para añadir un comentario al post
-     */
-    public void addComment(String text){
-        comments.add(text);
-    }
-    
-    /**
      * Metodo que devuelve la estampa de tiempo en el momento de crear el post
      */
     public long getTimeStamp(){
@@ -67,11 +58,6 @@ public class Post
         info += username + "\n=====================\n" + "Posted: ";
         info += timeString(time);
         info += "_____________________\nLikes: " + likes + "\n=====================\n\n";
-        if(comments.size() != 0)
-            for(int i=0; i<comments.size(); i++)
-                info += comments.get(i) + "\n_____________________\n";
-        else
-            info += "Sin comentarios";
         System.out.println(info);
     }
     
